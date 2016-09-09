@@ -1,25 +1,35 @@
-{
-  "sources": {
-    "python": {
-      "path": "."
-    },
-    "minitest-handler": {
-      "locked_version": "1.1.2"
-    },
-    "apt": {
-      "locked_version": "2.3.4"
-    },
-    "yum": {
-      "locked_version": "3.0.2"
-    },
-    "build-essential": {
-      "locked_version": "1.4.2"
-    },
-    "python_test": {
-      "path": "./test/cookbooks/python_test"
-    },
-    "chef_handler": {
-      "locked_version": "1.1.4"
-    }
-  }
-}
+DEPENDENCIES
+  apt
+  build-essential
+  minitest-handler
+  python
+    path: .
+    metadata: true
+  python_test
+    path: test/cookbooks/python_test
+  yum
+
+GRAPH
+  apt (4.0.2)
+    compat_resource (>= 12.10)
+  build-essential (6.0.5)
+    compat_resource (>= 12.14)
+    mingw (>= 1.1)
+    seven_zip (>= 0.0.0)
+  chef_handler (1.4.0)
+  compat_resource (12.14.1)
+  mingw (1.2.4)
+    compat_resource (>= 0.0.0)
+    seven_zip (>= 0.0.0)
+  minitest-handler (1.5.0)
+    chef_handler (>= 0.0.0)
+  python (1.4.7)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  python_test (0.1.0)
+  seven_zip (2.0.2)
+    windows (>= 1.2.2)
+  windows (2.0.2)
+  yum (4.0.0)
+  yum-epel (1.0.0)
+    yum (>= 3.6)
